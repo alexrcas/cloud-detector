@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Sidebar 04</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="static/css/custom.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel=”stylesheet” type=”text/css”
+    href=”https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/themes/fullscreen/galleria.classic.min.css” />
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    {%include 'sidebar.html' %}
+
+    <div id="content" class="p-4 p-md-5 pt-5">
+      <h2 class="mb-4">Capturas</h2>
+      <div class="container">
+        <div class="row">
+          <div class="container"></div>
+          <div class="galleria">
+            {% for item in events %}
+            <img src="static/detections/{{ item.image }}" data-title="{{ item.datetime }}" class="detection-pic">
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/themes/classic/galleria.classic.min.js"></script>
+  <script src="static/js/galleria.js"></script>
+  <script src="static/js/popper.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+
+</html>

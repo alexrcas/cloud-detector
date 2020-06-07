@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Sidebar 04</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="static/css/custom.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    {%include 'sidebar.html' %}
+
+    <div id="content" class="p-4 p-md-5 pt-5">
+      <h2 class="mb-4">¡Hola {{ username }}!</h2>
+      <p>CleverWatch es un sistema de vigilancia basado en inteligencia artificial (redes neuronales) para detectar
+        intrusos.
+        Los sistemas de inteligencia artificial requieren un gran poder de cómputo para poder funcionar. CleverWatch
+        libra al usuario
+        de la necesidad de adquirir el hardware necesario al estar planteado como un servicio en la nube. ¡Solo se
+        necesita una webcam y un
+        equipo capaz de ejecutar un navegador web!
+      </p>
+    </div>
+  </div>
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/popper.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+
+</html>
