@@ -15,13 +15,6 @@ from datetime import datetime
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USERNAME'] = 'xalex1200@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Gj6MzmaI'
-mail = Mail(app)
 
 app.config['MONGO_DBNAME'] = 'detector'
 app.config['MONGO_URI'] = 'mongodb+srv://CN2019:CN2019@cluster0-iklun.gcp.mongodb.net/detector?retryWrites=true&w=majority'
@@ -87,7 +80,6 @@ def detection():
     img.save('static/detections/' + imageTitle + '.jpg', 'JPEG')
     post = {'username': sessionID, 'datetime': now, 'image': imageTitle + '.jpg'}
     detects.insert_one(post)
-    sendMail(sessionID, img)
     return 'ok'
 
 
@@ -101,12 +93,6 @@ def formatTitle(title):
     title = title.replace('.', '')
     title = title.replace(' ', '')
     return title
-
-def sendMail(sessionID, img):
-    email = mongo.db.users.find_one({'username': sessionID})['email']
-    msg = Message('¡Intruso detectado!', sender="xalex1200@gmail.com", recipients=[email])
-    msg.body = 'Se ha detectado un intruso.'
-    mail.send(msg)
 
 
 @socketio.on('mensaje')
