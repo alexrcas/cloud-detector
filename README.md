@@ -1,6 +1,5 @@
 
-# Proyecto final: servicio de detección en la nube
-## Computación en la nube
+# Servicio de detección en la nube
 * Alexis Rodríguez Casañas
 * Alberto Martín Núñez
 
